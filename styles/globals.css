@@ -1,16 +1,36 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-[#06202A] text-gray-300;
+    }
+
+}
+/* animation bounce on links*/
+.headerp:hover > .bouncing{
+    animation: bounce 1s infinite;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: bounce;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
-* {
-  box-sizing: border-box;
+@keyframes bounce{
+    0%, 100% {
+        transform: translateY(-25%);
+        -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+        transform: none;
+        -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
 }
